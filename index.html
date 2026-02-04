@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Mohammad Jahidul Islam Tushar - GIS & Remote Sensing Specialist</title>
+    <meta name="description" content="Deputy GIS Specialist | Spatial Analysis, Remote Sensing, Geospatial Data Management, UAV Photogrammetry | Dhaka, Bangladesh"/>
+
+    <!-- Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #006ba6;
+            --primary-dark: #004a87;
+            --primary-light: #0096c7;
+            --accent: #00b4d8;
+            --dark: #0d1b2a;
+            --gray: #495057;
+            --light: #f8f9fa;
+            --bg: #f5f9fc;
+            --text: #2d3436;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4, h5, .section-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        .navbar {
+            background-color: var(--dark);
+            padding: 1.25rem 0;
+            transition: all 0.4s ease;
+        }
+
+        .navbar.scrolled {
+            background-color: rgba(13, 27, 42, 0.96);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+        }
+
+        .nav-link {
+            color: #ced4da !important;
+            font-weight: 500;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--accent) !important;
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%);
+            color: white;
+            padding: 180px 0 140px;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 140px;
+            background: linear-gradient(to bottom, transparent, var(--bg));
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border: 6px solid rgba(255,255,255,0.92);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+            transition: all 0.4s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.07) rotate(2deg);
+        }
+
+        .section {
+            padding: 100px 0;
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 1s ease-out;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title {
+            position: relative;
+            display: inline-block;
+            color: var(--dark);
+            margin-bottom: 2.8rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 3px;
+        }
+
+        .card {
+            border: none;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.09);
+            transition: all 0.4s ease;
+            background: white;
+        }
+
+        .card:hover {
+            transform: translateY(-14px);
+            box-shadow: 0 28px 60px rgba(0,0,0,0.15);
+        }
+
+        .card-header {
+            background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+            color: white;
+            font-weight: 600;
+            padding: 1.4rem 1.6rem;
+            border-radius: 14px 14px 0 0;
+        }
+
+        .skill-icon {
+            color: var(--accent);
+            font-size: 1.6rem;
+            margin-right: 14px;
+        }
+
+        .btn-download {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border: none;
+            padding: 14px 40px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.35s ease;
+        }
+
+        .btn-download:hover {
+            background: linear-gradient(90deg, var(--accent), var(--primary));
+            transform: translateY(-4px);
+            box-shadow: 0 14px 35px rgba(0, 180, 216, 0.4);
+        }
+
+        .list-unstyled li {
+            margin-bottom: 0.9rem;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .list-unstyled li::before {
+            content: "•";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+            font-size: 1.6rem;
+            line-height: 1;
+        }
+
+        .list-group-item {
+            border: none;
+            background: transparent;
+            padding: 0.75rem 0;
+        }
+
+        footer {
+            background: var(--dark);
+            color: #adb5bd;
+            padding: 80px 0 40px;
+        }
+
+        footer a {
+            color: #e9ecef;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--accent);
+        }
+
+        .contact-info i {
+            color: var(--accent);
+            width: 30px;
+            text-align: center;
+        }
+
+        @media (max-width: 991px) {
+            .hero { padding: 160px 0 120px; }
+            .profile-img { width: 170px; height: 170px; }
+        }
+
+        @media (max-width: 767px) {
+            .hero { padding: 140px 0 100px; }
+            .profile-img { width: 150px; height: 150px; }
+            .section-title { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold fs-4" href="#">Jahid Tushar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                <li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
+                <li class="nav-item"><a class="nav-link" href="#activities">Activities</a></li>
+                <li class="nav-item"><a class="nav-link" href="#trainings">Trainings</a></li>
+                <li class="nav-item"><a class="nav-link" href="#references">References</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero text-center">
+    <div class="container">
+        <img src="images/profile.jpg" alt="Mohammad Jahidul Islam Tushar" class="rounded-circle profile-img mb-4">
+        <h1 class="display-4 fw-bold mb-2">Mohammad Jahidul Islam Tushar</h1>
+        <h3 class="fw-light mb-4">Deputy GIS Specialist</h3>
+
+        <p class="lead mb-4">
+            <i class="fas fa-map-marker-alt me-2"></i> Dhaka, Bangladesh
+        </p>
+
+        <p class="mb-4 fs-5 contact-info">
+            <i class="fas fa-phone me-2"></i> +880 1521-108306<br>
+            <i class="fas fa-envelope me-2"></i> jahidhtushar448@gmail.com<br>
+            <i class="fab fa-linkedin me-2"></i>
+            <a href="https://www.linkedin.com/in/jahid-tushar1996" class="text-white text-decoration-none">linkedin.com/in/jahid-tushar1996</a>
+        </p>
+
+        <a href="documents/CV_Mohammad_Jahidul_Islam_Tushar.pdf" download class="btn btn-download btn-lg mt-2">
+            <i class="fas fa-file-arrow-down me-2"></i> Download Full CV
+        </a>
+    </div>
+</section>
+
+<!-- Professional Summary -->
+<section id="about" class="section bg-white">
+    <div class="container">
+        <h2 class="section-title text-center">Professional Summary</h2>
+        <div class="row justify-content-center">
+            <div class="col-lg-11">
+                <p class="lead text-center">
+                    Results-driven GIS and Remote Sensing specialist with extensive experience in spatial analysis, data visualization, and policy research. Proven ability to lead teams, manage complex projects, and deliver high-quality geospatial solutions under tight deadlines. Skilled in advanced mapping, spatial modeling, and quality control, with a track record of enhancing operational efficiency, such as training data collectors for the National Rabies Control Program to improve field data accuracy. Passionate about capitalizing on geospatial technologies for impactful development initiatives, combining technical expertise with strategic research and innovation to drive measurable outcomes.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Core Competencies -->
+<section id="skills" class="section bg-light">
+    <div class="container">
+        <h2 class="section-title text-center">Core Competencies</h2>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-header text-center">
+                        <i class="fas fa-map skill-icon"></i> GIS & Remote Sensing
+                    </div>
+                    <div class="card-body">
+                        ArcGIS, ArcGIS Pro, QGIS, ERDAS Imagine, ENVI, IDRISI Selva, Google Earth Pro
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-header text-center">
+                        <i class="fas fa-drone skill-icon"></i> UAV & Photogrammetry
+                    </div>
+                    <div class="card-body">
+                        Pix4D, Agisoft Metashape, Orthophoto generation, Point cloud processing, DEM/DSM creation
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-header text-center">
+                        <i class="fas fa-chart-area skill-icon"></i> Spatial Analysis & Modeling
+                    </div>
+                    <div class="card-body">
+                        Cartographic design, Geospatial modeling, LULC classification, Change detection, Spatial & non-spatial analysis
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-header text-center">
+                        <i class="fas fa-code skill-icon"></i> Automation & Programming
+                    </div>
+                    <div class="card-body">
+                        Basic Python, Script Adaptation & Automation (AI-assisted), Batch Processing
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-header text-center">
+                        <i class="fas fa-database skill-icon"></i> Data Management
+                    </div>
+                    <div class="card-body">
+                        Spatial databases, Data quality control (QA/QC), Data analytics, Multi-source data integration
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-header text-center">
+                        <i class="fas fa-chart-pie skill-icon"></i> Visualization & Reporting
+                    </div>
+                    <div class="card-body">
+                        Tableau, SPSS, Adobe Illustrator, Adobe Photoshop, MS Office
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Professional Experience -->
+<section id="experience" class="section">
+    <div class="container">
+        <h2 class="section-title text-center">Professional Experience</h2>
+
+        <div class="row g-4">
+
+            <!-- Deputy GIS Specialist -->
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center flex-wrap gap-3">
+                        <div>
+                            <h5 class="mb-1">Deputy GIS Specialist</h5>
+                            <div>Sheltech Consultants (Pvt.) Ltd.</div>
+                        </div>
+                        <div>Dec 2024 – Present | Dhaka, Bangladesh | Full-time</div>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled">
+                            <li>Managed digitization QA/QC for mouza mapping and spatial databases, maintaining 90–95% data integrity, positional accuracy, and project compliance.</li>
+                            <li>Performed QC verification on geo-referencing, edge-matching, topology validation, and attribute accuracy for 2000+ map sheets using satellite and drone imagery, achieving <5% error rates and reducing rework by ≈35%.</li>
+                            <li>Coordinated quality assurance and updates for land-use/land-cover databases by validating and integrating multi-source satellite datasets for accurate land zoning outcomes.</li>
+                            <li>Developed Python scripts for automated QC validation, error detection, and batch processing (AI-assisted), improving QA efficiency by 30–40% and shortening database finalization timelines.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GIS Data Quality Manager -->
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center flex-wrap gap-3">
+                        <div>
+                            <h5 class="mb-1">GIS Data Quality Manager</h5>
+                            <div>Institute of Water Modelling (IWM)</div>
+                        </div>
+                        <div>Feb 2023 – Nov 2024 | Dhaka, Bangladesh | Full-time</div>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled">
+                            <li>Led teams of 15+ including the cartographic team, printing, digitization units, ensuring spatial accuracy and consistency across Dhaka and Barishal Division with <7% error rate.</li>
+                            <li>Conducted rigorous QA/QC and validation of digitized maps and GIS databases, achieving 85-90% overall data accuracy and preventing costly rework in project.</li>
+                            <li>Implemented geospatial modeling and automation scripting solutions, streamlining workflows and boosting team operational efficiency by ∼25%.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GIS Expert -->
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center flex-wrap gap-3">
+                        <div>
+                            <h5 class="mb-1">GIS Expert</h5>
+                            <div>Group Mappers (DGHS: National Rabies Control Program)</div>
+                        </div>
+                        <div>Feb 2019 – Jun 2021 | Dhaka, Bangladesh | Full-time</div>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled">
+                            <li>Delivered nationwide GIS/RS training to 150+ participants, improving field data accuracy by 30% and strengthening rabies surveillance.</li>
+                            <li>Developed and managed Kobo Collect-based mobile data systems and GIS servers, enabling real-time tracking of 700+ field reports for national health programs.</li>
+                            <li>Generated disease-risk and health facility maps to support policy decisions and accelerate outbreak response planning.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GIS Business Development Executive -->
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center flex-wrap gap-3">
+                        <div>
+                            <h5 class="mb-1">GIS Business Development Executive</h5>
+                            <div>Shahriar GIS School</div>
+                        </div>
+                        <div>May 2019 – Aug 2024 | Dhaka, Bangladesh | Part-time</div>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled">
+                            <li>Managed online workshops, website updates, social media campaigns, and promotional design, increasing course enrollment by 50%.</li>
+                            <li>Coordinated ambassador programs and built strategic partnerships to expand training reach and visibility in the GIS education sector.</li>
+                            <li>Analyzed marketing and social media performance data to optimize strategies, boosting engagement and conversions by 40%.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Consultant -->
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center flex-wrap gap-3">
+                        <div>
+                            <h5 class="mb-1">Technical Consultant</h5>
+                            <div>Centre for Environmental and Geographic Information Services (CEGIS)</div>
+                        </div>
+                        <div>Mar 2021 – Apr 2021 | Dhaka, Bangladesh | Full-time</div>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled">
+                            <li>Managed map procurement for the National Population Census 2022.</li>
+                            <li>Reviewed, processed, and converted maps into required digital formats.</li>
+                            <li>Performed georeferencing to ensure spatial accuracy of census maps.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Executive Management Team Member -->
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center flex-wrap gap-3">
+                        <div>
+                            <h5 class="mb-1">Executive Management Team Member</h5>
+                            <div>Group Mappers</div>
+                        </div>
+                        <div>Aug 2020 – Oct 2020 | Dhaka, Bangladesh | Part-time</div>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled">
+                            <li>Conducted data analysis, processing, and visualization for project deliverables.</li>
+                            <li>Developed implementation methodologies and coordinated with team members to meet project goals.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Research Assistant -->
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center flex-wrap gap-3">
+                        <div>
+                            <h5 class="mb-1">Research Assistant</h5>
+                            <div>Mohammad Abdul Quader Research Group</div>
+                        </div>
+                        <div>Jan 2019 – Feb 2021 | Dhaka, Bangladesh | Full-time</div>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled">
+                            <li>Delivered GIS and remote sensing analysis for multiple research projects over two years.</li>
+                            <li>Strengthened research outcomes by applying improved methodologies and quality data processing.</li>
+                            <li>Analyzed and visualized spatial and statistical data using Excel, SPSS, ArcGIS, QGIS, and ERDAS Imagine.</li>
+                            <li>Supported technical reporting and documentation for project deliverables.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Education -->
+<section id="education" class="section bg-light">
+    <div class="container">
+        <h2 class="section-title text-center">Education</h2>
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        M.Sc. Geography & Environment
+                    </div>
+                    <div class="card-body">
+                        <strong>Jagannath University, Dhaka, Bangladesh</strong><br>
+                        CGPA 3.57/4.00 | 2019 – 2020<br>
+                        Applied GIS, Remote Sensing, Digital Image Processing
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        B.Sc. Geography & Environment
+                    </div>
+                    <div class="card-body">
+                        <strong>Jagannath University, Dhaka, Bangladesh</strong><br>
+                        CGPA 3.36/4.00 | 2016 – 2019<br>
+                        GIS Fundamentals, Cartography, Geospatial Analysis
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Publications -->
+<section id="publications" class="section">
+    <div class="container">
+        <h2 class="section-title text-center">Publications</h2>
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <strong>Tushar et al. (2022).</strong> Land Use-Land Cover and Change Detection post-classification of Dhaka City Corporation Area (1972–2020). Jamal Nazrul Islam National Conference 2022, Chittagong, Bangladesh.
+                    </div>
+                </div>
+
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <strong>Quader et al. (2022).</strong> Factors of land cover change of Dhaka city through geospatial techniques. <em>Earth Systems and Environment</em>, 5(3), 105–119.
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <strong>Tushar et al.</strong> Disaster risk reduction through mangrove management: A case study of Sundarbans and surroundings. <em>Jagannath University Journal of Life and Earth Sciences</em>. (In progress)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Professional Activities & Contributions -->
+<section id="activities" class="section bg-light">
+    <div class="container">
+        <h2 class="section-title text-center">Professional Activities & Contributions</h2>
+        <div class="card">
+            <div class="card-body">
+                <ul class="list-unstyled mb-4">
+                    <li><strong>GIS Trainer</strong> – Geoinformatics Earth Observation Research Center (<a href="https://youtube.com/@georc" target="_blank">https://youtube.com/@georc</a>)<br>practical GIS and Remote Sensing video tutorials</li>
+                </ul>
+
+                <h5 class="mt-4 mb-3">Volunteering & Community Mapping</h5>
+                <ul class="list-unstyled">
+                    <li><strong>Group Mappers</strong> — Participated in crowdsourced GIS mapping projects (COVID-19 tracking, Dengue risk mapping)</li>
+                    <li><strong>Green Voice</strong> — Supported river conservation activities through geospatial data and mapping</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Trainings & Certifications -->
+<section id="trainings" class="section">
+    <div class="container">
+        <h2 class="section-title text-center">Trainings & Certifications</h2>
+        <div class="row g-3">
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        Cadastral Map Digitizing Using ArcGIS – GEOMARK LIMITED (Sep 2022)
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        Introduction to NASA’s "Black Marble" Night Lights Data – NASA (Dec 2020)
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        Web GIS and Web Mapping: Basics of Open Source Platforms – Udemy (Nov 2019)
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        The Crossroad of Exploring Geospatial Science – MORU (Aug 2022)
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        GIS for Beginners: Introduction to GIS – GroupMappers (May 2019)
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        GIS Software Technology Conference 2020 – SuperMap GIS (Oct 2020)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- References -->
+<section id="references" class="section bg-light">
+    <div class="container">
+        <h2 class="section-title text-center">References</h2>
+        <div class="row g-4 justify-content-center">
+
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-header text-center">
+                        Dr. Mohammad Abdul Quader
+                    </div>
+                    <div class="card-body text-center">
+                        Professor, Department of Geography and Environment<br>
+                        Jagannath University, Dhaka<br>
+                        Cell: +880 1791-300407<br>
+                        Email: <a href="mailto:quader@geography.jnu.ac.bd">quader@geography.jnu.ac.bd</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-header text-center">
+                        Dr. Md. Abdul Malak
+                    </div>
+                    <div class="card-body text-center">
+                        Associate Professor<br>
+                        Department of Geography and Environment<br>
+                        Jagannath University, Dhaka<br>
+                        Cell: +880 1731-147799<br>
+                        Email: <a href="mailto:amalak@geography.jnu.ac.bd">amalak@geography.jnu.ac.bd</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-center">
+    <div class="container">
+        <p class="mb-4">© 2026 Mohammad Jahidul Islam Tushar. All rights reserved.</p>
+        <div class="mb-4">
+            <a href="https://www.linkedin.com/in/jahid-tushar1996" class="mx-4 fs-3"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:jahidhtushar448@gmail.com" class="mx-4 fs-3"><i class="fas fa-envelope"></i></a>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+        document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 80);
+    });
+
+    // Section fade-in animation
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => observer.observe(section));
+</script>
+
+</body>
+</html>
